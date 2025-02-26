@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mauve-light: #E6D7E6;
+  --mauve-dark: #9E8B9E;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  background-color: var(--mauve-light);
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+} 
