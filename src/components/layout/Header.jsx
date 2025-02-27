@@ -1,11 +1,39 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+
+  // Add scroll listener and click outside handler
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && 
+          menuRef.current && 
+          !menuRef.current.contains(event.target) &&
+          !buttonRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -20,44 +48,62 @@ const Header = () => {
       {isHomePage ? (
         <>
           <button onClick={() => scrollToSection('about')} 
-            className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+            className={`hover:text-primary-600 transition-colors ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            }`}>
             About
           </button>
           <Link to="/hours-location" onClick={() => setIsMenuOpen(false)}
-            className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+            className={`hover:text-primary-600 transition-colors ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            }`}>
             Hours & Location
           </Link>
           <button onClick={() => scrollToSection('menu')} 
-            className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+            className={`hover:text-primary-600 transition-colors ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            }`}>
             Menu
           </button>
           <button onClick={() => scrollToSection('contact')} 
-            className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+            className={`hover:text-primary-600 transition-colors ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            }`}>
             Contact
           </button>
         </>
       ) : (
         <>
           <Link to="/#about" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+            className={`hover:text-primary-600 transition-colors ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            }`}>
             About
           </Link>
           <Link to="/hours-location" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+            className={`hover:text-primary-600 transition-colors ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            }`}>
             Hours & Location
           </Link>
           <Link to="/#menu" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+            className={`hover:text-primary-600 transition-colors ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            }`}>
             Menu
           </Link>
           <Link to="/#contact" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+            className={`hover:text-primary-600 transition-colors ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            }`}>
             Contact
           </Link>
         </>
       )}
       <Link to="/cart" onClick={() => setIsMenuOpen(false)} 
-        className={`hover:text-primary-600 transition-colors ${isMobile ? 'text-center w-full' : ''}`}>
+        className={`hover:text-primary-600 transition-colors ${
+          isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+        }`}>
         Cart
       </Link>
     </>
@@ -81,8 +127,9 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button 
+          ref={buttonRef}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="lg:hidden pr-4 sm:pr-8 text-3xl"
+          className="lg:hidden pr-4 sm:pr-8 text-5xl leading-none"
           aria-label="Toggle menu"
         >
           ☰
@@ -90,18 +137,10 @@ const Header = () => {
 
         {/* Mobile Menu Overlay */}
         {isMenuOpen && (
-          <div className="fixed left-0 right-0 top-20 bottom-0 bg-white/95 backdrop-blur-md lg:hidden">
-            <div className="flex flex-col items-stretch gap-6 text-xl font-playfair p-8 bg-white/90">
+          <div ref={menuRef} className="fixed left-0 right-0 top-20 bottom-0 bg-white/95 backdrop-blur-md lg:hidden">
+            <div className="flex flex-col items-stretch gap-0 text-xl font-playfair bg-white/90">
               <NavItems isMobile={true} />
             </div>
-            {/* Close button */}
-            <button 
-              onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 right-6 text-3xl"
-              aria-label="Close menu"
-            >
-              ×
-            </button>
           </div>
         )}
       </nav>
