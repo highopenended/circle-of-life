@@ -5,7 +5,6 @@ import Header from './components/layout/Header'
 import HeroSection from './components/sections/HeroSection'
 import AboutSection from './components/sections/AboutSection'
 import MenuSection from './components/sections/MenuSection'
-import ContactSection from './components/sections/ContactSection'
 import HoursLocationPage from './components/pages/HoursLocationPage'
 import Footer from './components/layout/Footer'
 import ImagePreloader from './components/common/ImagePreloader'
@@ -34,7 +33,6 @@ function App() {
                   <HeroSection />
                   <AboutSection />
                   <MenuSection />
-                  <ContactSection />
                 </>
               } />
             </Routes>

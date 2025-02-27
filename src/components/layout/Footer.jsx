@@ -48,19 +48,21 @@ const Footer = () => {
           {/* Newsletter Signup */}
           <div>
             <h3 className="text-xl font-playfair font-bold mb-3">Stay Updated</h3>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-primary-600 transition-colors"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-primary-600 transition-colors"
                 required
               />
               <button
                 onClick={handleSubmit}
-                className="bg-primary-600 text-white font-medium px-6 py-2 rounded-lg
-                  hover:bg-primary-700 transition-colors whitespace-nowrap text-base"
+                className="bg-primary-600 text-white font-semibold px-8 py-3 rounded-lg
+                  hover:bg-primary-700 active:bg-primary-800 transition-all duration-200 
+                  shadow-md hover:shadow-lg text-base min-w-[120px]
+                  transform hover:-translate-y-0.5"
               >
                 Subscribe
               </button>
