@@ -48,26 +48,26 @@ const Header = () => {
       {isHomePage ? (
         <>
           <button onClick={() => scrollToSection('about')} 
-            className={`hover:text-primary-600 transition-colors ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
             }`}>
             About
           </button>
           <Link to="/hours-location" onClick={() => setIsMenuOpen(false)}
-            className={`hover:text-primary-600 transition-colors ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
             }`}>
             Hours & Location
           </Link>
           <button onClick={() => scrollToSection('menu')} 
-            className={`hover:text-primary-600 transition-colors ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
             }`}>
             Menu
           </button>
           <button onClick={() => scrollToSection('contact')} 
-            className={`hover:text-primary-600 transition-colors ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
             }`}>
             Contact
           </button>
@@ -75,34 +75,34 @@ const Header = () => {
       ) : (
         <>
           <Link to="/#about" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-colors ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
             }`}>
             About
           </Link>
           <Link to="/hours-location" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-colors ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
             }`}>
             Hours & Location
           </Link>
           <Link to="/#menu" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-colors ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
             }`}>
             Menu
           </Link>
           <Link to="/#contact" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-colors ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
             }`}>
             Contact
           </Link>
         </>
       )}
       <Link to="/cart" onClick={() => setIsMenuOpen(false)} 
-        className={`hover:text-primary-600 transition-colors ${
-          isMobile ? 'text-center w-full py-4 hover:bg-black/5' : ''
+        className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+          isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
         }`}>
         Cart
       </Link>

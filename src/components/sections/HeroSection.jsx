@@ -35,7 +35,7 @@ const HeroSection = () => {
       </div>
 
       {/* Right Side Images with Improved Masking */}
-      <div className="absolute right-0 top-0 h-full w-[40%] z-10">
+      <div className="absolute right-0 top-0 h-full w-[40%] z-10 opacity-0 lg:opacity-100 transition-opacity duration-300">
         {/* Top Right Image Container */}
         <div 
           className="absolute right-0 top-0 h-1/2 w-full max-w-[600px]"
