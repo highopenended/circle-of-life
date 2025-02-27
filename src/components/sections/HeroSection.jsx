@@ -2,13 +2,13 @@
 import React from 'react';
 import circleLogo from '../../assets/circle_of_life_logo.png';
 import belowLogoText from '../../assets/below_logo_text.png';
-import eggAndMilk from '../../assets/egg-and-milk.jpg';
-import chocolateGlazed from '../../assets/chocolate-glazed-donuts.jpg';
+import eggAndMilk from '../../assets/eggs-and-milk.png';
+import chocolateGlazed from '../../assets/chocolate-glazed-donuts.png';
 import donutSpread from '../../assets/donut-spread.png';
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative h-screen bg-mauve-light overflow-hidden">
+    <section id="hero" className="relative h-screen overflow-hidden">
       {/* Left Side Image */}
       <div className="absolute left-0 top-0 h-full w-[75%] z-10 max-w-[800px]">
         <img 
@@ -34,39 +34,37 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Right Side Images */}
-      <div className="absolute right-0 top-0 h-full w-[40%] z-10 max-w-[600px]">
+      {/* Right Side Images with Improved Masking */}
+      <div
+        className="absolute right-0 top-0 h-full w-[40%] z-10 max-w-[600px]"
+        style={{
+          WebkitMaskImage: `linear-gradient(to right, transparent 0%, black 15%, black 95%, transparent 100%)`,
+          maskImage: `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`,
+        }}
+      >
         {/* Top Right Image */}
-        <div className="relative h-1/2 w-full overflow-hidden">
-          <div className="absolute inset-0 z-10">
-            {/* Top edge fade */}
-            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-mauve-light to-transparent" />
-            {/* Bottom edge fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-mauve-light to-transparent" />
-            {/* Left edge fade */}
-            <div className="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-mauve-light to-transparent" />
-            {/* Right edge fade */}
-            <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-l from-mauve-light to-transparent" />
-          </div>
+        <div
+          className="relative h-1/2 w-full overflow-hidden"
+          style={{
+            WebkitMaskImage: `linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)`,
+            maskImage: `linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)`,
+          }}
+        >
           <img 
             src={eggAndMilk} 
             alt="Egg and Milk" 
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         {/* Bottom Right Image */}
-        <div className="relative h-1/2 w-full overflow-hidden">
-          <div className="absolute inset-0 z-10">
-            {/* Top edge fade */}
-            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-mauve-light to-transparent" />
-            {/* Bottom edge fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-mauve-light to-transparent" />
-            {/* Left edge fade */}
-            <div className="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-mauve-light to-transparent" />
-            {/* Right edge fade */}
-            <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-l from-mauve-light to-transparent" />
-          </div>
+        <div
+          className="relative h-1/2 w-full right- overflow-hidden"
+          style={{
+            WebkitMaskImage: `linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)`,
+            maskImage: `linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)`,
+          }}
+        >
           <img 
             src={chocolateGlazed} 
             alt="Chocolate Glazed Donuts" 
@@ -74,11 +72,8 @@ const HeroSection = () => {
           />
         </div>
       </div>
-
-      {/* Optional: Add a subtle overlay to ensure logo visibility */}
-      <div className="absolute inset-0 bg-white/10 z-10"></div>
     </section>
   );
 };
 
-export default HeroSection; 
+export default HeroSection;
