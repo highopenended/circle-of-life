@@ -35,6 +35,21 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
+  // Add this near the other useEffect
+  useEffect(() => {
+    if (isHomePage) {
+      const scrollTarget = sessionStorage.getItem('scrollTo');
+      if (scrollTarget) {
+        // Clear the stored value
+        sessionStorage.removeItem('scrollTo');
+        // Small delay to ensure page content is loaded
+        setTimeout(() => {
+          scrollToSection(scrollTarget);
+        }, 100);
+      }
+    }
+  }, [isHomePage]);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -45,66 +60,82 @@ const Header = () => {
 
   const NavItems = ({ isMobile }) => (
     <>
-      {isHomePage ? (
-        <>
-          <button onClick={() => scrollToSection('about')} 
-            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-            }`}>
-            About
-          </button>
-          <Link to="/hours-location" onClick={() => setIsMenuOpen(false)}
-            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-            }`}>
-            Hours & Location
-          </Link>
-          <button onClick={() => scrollToSection('menu')} 
-            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-            }`}>
-            Menu
-          </button>
-          <button onClick={() => scrollToSection('contact')} 
-            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-            }`}>
-            Contact
-          </button>
-        </>
-      ) : (
-        <>
-          <Link to="/#about" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-            }`}>
-            About
-          </Link>
-          <Link to="/hours-location" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-            }`}>
-            Hours & Location
-          </Link>
-          <Link to="/#menu" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-            }`}>
-            Menu
-          </Link>
-          <Link to="/#contact" onClick={() => setIsMenuOpen(false)} 
-            className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
-              isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-            }`}>
-            Contact
-          </Link>
-        </>
-      )}
-      <Link to="/cart" onClick={() => setIsMenuOpen(false)} 
+      <button 
+        onClick={() => {
+          if (!isHomePage) {
+            window.location.href = '/';
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          setIsMenuOpen(false);
+        }}
         className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
           isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
-        }`}>
-        Cart
+        }`}
+      >
+        Home
+      </button>
+
+      <button 
+        onClick={() => {
+          if (!isHomePage) {
+            window.location.href = '/#about';
+            sessionStorage.setItem('scrollTo', 'about');
+          } else {
+            scrollToSection('about');
+          }
+          setIsMenuOpen(false);
+        }}
+        className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+          isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
+        }`}
+      >
+        About
+      </button>
+      <button 
+        onClick={() => {
+          if (!isHomePage) {
+            window.location.href = '/#menu';
+            sessionStorage.setItem('scrollTo', 'menu');
+          } else {
+            scrollToSection('menu');
+          }
+          setIsMenuOpen(false);
+        }}
+        className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+          isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
+        }`}
+      >
+        Menu
+      </button>
+
+      <button 
+        onClick={() => {
+          if (!isHomePage) {
+            window.location.href = '/#contact';
+            sessionStorage.setItem('scrollTo', 'contact');
+          } else {
+            scrollToSection('contact');
+          }
+          setIsMenuOpen(false);
+        }}
+        className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+          isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
+        }`}
+      >
+        Contact Us
+      </button>
+
+      {!isMobile && <span className="text-gray-300 select-none">|</span>}
+      {isMobile && <div className="w-full border-t border-gray-200 my-2"></div>}
+
+      <Link to="/hours-location" 
+        onClick={() => setIsMenuOpen(false)} 
+        className={`hover:text-primary-600 transition-all duration-200 ease-in-out ${
+          isMobile ? 'text-center w-full py-4 hover:bg-black/5' : 'hover:scale-105'
+        }`}
+      >
+        Hours & Location
       </Link>
     </>
   );

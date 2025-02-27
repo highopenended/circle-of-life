@@ -4,22 +4,27 @@ import DonutCard from '../menu/DonutCard'
 import { donuts } from '../../data/donuts'
 import SectionTitle from '../common/SectionTitle'
 import ScrollToTop from '../common/ScrollToTop'
+import circleLogo from '../../assets/circle_of_life_logo.png'
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="min-h-screenpy-16 flex items-center">
+    <section id="menu" className="min-h-screen py-16 flex items-center relative">
+      {/* Logo - Absolutely positioned */}
+      <div className="absolute left-[30%] top-8 transform -translate-x-full">
+        <img 
+          src={circleLogo} 
+          alt="The Circle of Life Logo" 
+          className="w-32 md:w-40 lg:w-48 drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)] [transform:rotate(-15deg)]"
+        />
+      </div>
+
       <div className="container mx-auto px-4">
-        <div className="text-center">
+        {/* Title and Description - Centered */}
+        <div className="text-center mb-12">
           <SectionTitle>Menu</SectionTitle>
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
-              LOGO
-            </div>
-            <p className="text-xl max-w-2xl mx-auto">
-              Discover our handcrafted selection of artisanal donuts, made fresh daily with love
-            </p>
-          </div>
+          <p className="text-xl max-w-2xl mx-auto">
+            Discover our handcrafted selection of artisanal donuts, made fresh daily with love! Which is your favorite?
+          </p>
         </div>
 
         {/* Donut Grid */}

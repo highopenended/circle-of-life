@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white/80 backdrop-blur-sm py-8">
+    <footer id="contact" className="bg-white/80 backdrop-blur-sm py-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About Section */}
@@ -54,15 +54,18 @@ const Footer = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-primary-600 transition-colors"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-200 
+                  focus:outline-none focus:border-primary-600 transition-colors
+                  bg-white"
                 required
               />
               <button
                 onClick={handleSubmit}
-                className="bg-primary-600 text-white font-semibold px-8 py-3 rounded-lg
+                className="bg-pink-500 text-white font-semibold px-8 py-3 rounded-lg
                   hover:bg-primary-700 active:bg-primary-800 transition-all duration-200 
                   shadow-md hover:shadow-lg text-base min-w-[120px]
-                  transform hover:-translate-y-0.5"
+                  transform hover:-translate-y-0.5 disabled:opacity-50
+                  border border-primary-700"
               >
                 Subscribe
               </button>
