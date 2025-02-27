@@ -10,7 +10,7 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative h-screen overflow-hidden">
       {/* Left Side Image */}
-      <div className="absolute left-0 top-0 h-full w-[75%] z-10 max-w-[800px]">
+      <div className="absolute left-0 top-0 h-full w-[75%] z-10 max-w-[900px]">
         <img 
           src={donutSpread} 
           alt="Variety of Donuts" 
@@ -19,7 +19,7 @@ const HeroSection = () => {
       </div>
 
       {/* Logo Container - Centered and Top Z-Index */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-20 -translate-y-12">
         <div className="w-[400px] flex flex-col items-center">
           <img 
             src={circleLogo} 
@@ -35,19 +35,13 @@ const HeroSection = () => {
       </div>
 
       {/* Right Side Images with Improved Masking */}
-      <div
-        className="absolute right-0 top-0 h-full w-[40%] z-10 max-w-[600px]"
-        style={{
-          WebkitMaskImage: `linear-gradient(to right, transparent 0%, black 15%, black 95%, transparent 100%)`,
-          maskImage: `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`,
-        }}
-      >
-        {/* Top Right Image */}
-        <div
-          className="relative h-1/2 w-full overflow-hidden"
+      <div className="absolute right-0 top-0 h-full w-[40%] z-10">
+        {/* Top Right Image Container */}
+        <div 
+          className="absolute right-0 top-0 h-1/2 w-full max-w-[600px]"
           style={{
-            WebkitMaskImage: `linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)`,
-            maskImage: `linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)`,
+            WebkitMaskImage: `linear-gradient(to right, transparent 0%, black 10%, black 95%, transparent 100%)`,
+            maskImage: `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`,
           }}
         >
           <img 
@@ -57,12 +51,12 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* Bottom Right Image */}
-        <div
-          className="relative h-1/2 w-full right- overflow-hidden"
+        {/* Bottom Right Image Container */}
+        <div 
+          className="absolute right-16 bottom-0 h-1/2 w-full max-w-[600px]"
           style={{
-            WebkitMaskImage: `linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)`,
-            maskImage: `linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)`,
+            WebkitMaskImage: `linear-gradient(to right, transparent 0%, black 10%, black 95%, transparent 100%)`,
+            maskImage: `linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)`,
           }}
         >
           <img 
