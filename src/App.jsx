@@ -6,19 +6,22 @@ import AboutSection from './components/sections/AboutSection'
 import MenuSection from './components/sections/MenuSection'
 import ContactSection from './components/sections/ContactSection'
 import Footer from './components/layout/Footer'
+import ImagePreloader from './components/common/ImagePreloader'
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-mauve-light">
-      <Header />
-      <main className="flex-grow">
-        <HeroSection />
-        <AboutSection />
-        <MenuSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <ImagePreloader>
+      <div className="flex flex-col min-h-screen bg-mauve-light">
+        <Header />
+        <main className="flex-grow">
+          <HeroSection />
+          <AboutSection />
+          <MenuSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </ImagePreloader>
   )
 }
 
