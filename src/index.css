@@ -8,6 +8,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  color: white;
 }
 
 body {
@@ -16,4 +17,9 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+}
+
+/* Add text shadow to help white text stand out against light backgrounds */
+h1, h2, h3, h4, h5, h6, p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 } 

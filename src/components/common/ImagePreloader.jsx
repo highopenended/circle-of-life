@@ -1,14 +1,26 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
+import circleLogo from '../../assets/circle_of_life_logo.png';
+import belowLogoText from '../../assets/below_logo_text.png';
+import eggAndMilk from '../../assets/eggs-and-milk.png';
+import chocolateGlazed from '../../assets/chocolate-glazed-donuts.png';
+import donutSpread from '../../assets/donut-spread.png';
+import donutsPhoto1 from '../../assets/donuts_photograph1.png';
+import donutsPhoto2 from '../../assets/donuts_photograph2.png';
+import certificationPaper from '../../assets/certification_papers.png';
+// Import any other images you're using
 
 // Create an array of all image paths we want to preload
 const imagePaths = [
-  '/src/assets/circle_of_life_logo.png',
-  '/src/assets/below_logo_text.png',
-  '/src/assets/eggs-and-milk.png',
-  '/src/assets/chocolate-glazed-donuts.png',
-  '/src/assets/donut-spread.png',
-  // Add all other image paths here
+  circleLogo,
+  belowLogoText,
+  eggAndMilk,
+  chocolateGlazed,
+  donutSpread,
+  donutsPhoto1,
+  donutsPhoto2,
+  certificationPaper,
+  // Add any other imported images
 ];
 
 // eslint-disable-next-line react/prop-types
@@ -16,7 +28,6 @@ const ImagePreloader = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Preload images before mounting
     const preloadImages = async () => {
       try {
         await Promise.all(
@@ -32,7 +43,7 @@ const ImagePreloader = ({ children }) => {
         setIsLoading(false);
       } catch (error) {
         console.error('Error preloading images:', error);
-        setIsLoading(false); // Show content anyway if there's an error
+        setIsLoading(false);
       }
     };
 

@@ -19,15 +19,15 @@ const DonutCard = ({ imageUrl, nameJp, nameEn, price }) => {
         <img 
           src={imageUrl} 
           alt={nameEn} 
-          className="w-96 h-96 relative z-10 object-contain transition-transform hover:scale-105"
+          className="w-96 h-96 relative z-10 object-contain transition-transform hover:scale-105 cursor-pointer"
         />
       </div>
       
       {/* Text content */}
       <div className="text-center -mt-8">
-        <h3 className="text-2xl font-medium text-mauve-dark">{nameJp}</h3>
-        <p className="text-xl text-mauve-dark">{nameEn}</p>
-        <p className="text-xl font-medium text-mauve-dark">¥{price}</p>
+        <h3 className="text-2xl font-medium">{nameJp}</h3>
+        <p className="text-xl">{nameEn}</p>
+        <p className="text-xl font-medium">¥{price}</p>
       </div>
     </div>
   )

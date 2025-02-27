@@ -7,7 +7,7 @@ import ScrollToTop from '../common/ScrollToTop'
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="min-h-screen bg-mauve-light py-16 flex items-center">
+    <section id="menu" className="min-h-screenpy-16 flex items-center">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <SectionTitle>Menu</SectionTitle>
@@ -16,7 +16,7 @@ const MenuSection = () => {
             <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
               LOGO
             </div>
-            <p className="text-xl text-mauve-dark max-w-2xl mx-auto">
+            <p className="text-xl max-w-2xl mx-auto">
               Discover our handcrafted selection of artisanal donuts, made fresh daily with love
             </p>
           </div>

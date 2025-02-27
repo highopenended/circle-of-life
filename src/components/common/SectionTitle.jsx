@@ -2,8 +2,8 @@ import React from 'react';
 
 const SectionTitle = ({ children }) => {
   return (
-    <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-mauve-dark
-      [text-shadow:_2px_2px_2px_rgb(0_0_0_/_20%)]">
+    <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8
+      [text-shadow:_1px_-1px_0px_rgba(255,255,255,1),_2px_2px_3px_rgba(0,0,0,0.4)]">
       {children}
     </h2>
   );
