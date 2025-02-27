@@ -5,15 +5,19 @@ import HeroSection from './components/sections/HeroSection'
 import AboutSection from './components/sections/AboutSection'
 import MenuSection from './components/sections/MenuSection'
 import ContactSection from './components/sections/ContactSection'
+import Footer from './components/layout/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <HeroSection />
-      <AboutSection />
-      <MenuSection />
-      <ContactSection />
+      <main className="flex-grow">
+        <HeroSection />
+        <AboutSection />
+        <MenuSection />
+        <ContactSection />
+      </main>
+      <Footer />
     </div>
   )
 }

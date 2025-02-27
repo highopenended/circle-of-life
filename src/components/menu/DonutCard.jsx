@@ -12,22 +12,22 @@ import PropTypes from 'prop-types'
  */
 const DonutCard = ({ imageUrl, nameJp, nameEn, price }) => {
   return (
-    <div className="flex flex-col items-center p-4 transition-transform hover:scale-105">
+    <div className="flex flex-col items-center p-4">
       {/* Image container with white circular backdrop */}
-      <div className="relative mb-4">
-        <div className="w-80 h-80 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-90" />
+      <div className="relative">
+        <div className="w-96 h-96 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[.8] blur-[2px]" />
         <img 
           src={imageUrl} 
           alt={nameEn} 
-          className="w-72 h-72 relative z-10 object-contain"
+          className="w-96 h-96 relative z-10 object-contain transition-transform hover:scale-105"
         />
       </div>
       
       {/* Text content */}
-      <div className="text-center">
-        <h3 className="text-lg font-medium text-mauve-dark">{nameJp}</h3>
-        <p className="text-md text-mauve-dark">{nameEn}</p>
-        <p className="text-md font-medium text-mauve-dark">¥{price}</p>
+      <div className="text-center -mt-8">
+        <h3 className="text-2xl font-medium text-mauve-dark">{nameJp}</h3>
+        <p className="text-xl text-mauve-dark">{nameEn}</p>
+        <p className="text-xl font-medium text-mauve-dark">¥{price}</p>
       </div>
     </div>
   )
