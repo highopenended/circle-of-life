@@ -3,6 +3,7 @@ import React from 'react'
 import DonutCard from '../menu/DonutCard'
 import { donuts } from '../../data/donuts'
 import SectionTitle from '../common/SectionTitle'
+import ScrollToTop from '../common/ScrollToTop'
 
 const MenuSection = () => {
   return (
@@ -34,6 +35,7 @@ const MenuSection = () => {
           ))}
         </div>
       </div>
+      <ScrollToTop />
     </section>
   )
 }

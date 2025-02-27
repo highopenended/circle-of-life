@@ -7,7 +7,7 @@ import certificationPaper from '../../assets/certification_papers.png';
 
 const AboutSection = () => {
   return (
-    <section className="relative max-w-7xl mx-auto px-4 py-16">
+    <section id="about" className="relative max-w-7xl mx-auto px-4 py-16">
       <div className="text-center mb-12">
         <SectionTitle>About Us</SectionTitle>
       </div>
