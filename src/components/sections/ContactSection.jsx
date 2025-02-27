@@ -1,10 +1,15 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import SectionTitle from '../common/SectionTitle'
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="bg-mauve-light py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl text-center text-mauve-dark mb-8">CONTACT US</h2>
+    <section id="contact" className="bg-mauve-light py-16 flex items-center">
+      <div className="container mx-auto">
+        <div className="text-center">
+          <SectionTitle>Contact Us</SectionTitle>
+          {/* Rest of contact section content */}
+        </div>
       </div>
     </section>
   )

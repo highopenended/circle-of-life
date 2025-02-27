@@ -12,21 +12,21 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent-white backdrop-blur-sm">
-      <nav className="container mx-auto px-6 py-6 flex justify-between items-center">
+      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-mauve-dark text-4xl font-bold font-playfair">
+        <div className="text-mauve-dark text-4xl font-cursive">
           The Circle of Life
         </div>
 
         {/* Navigation Items */}
-        <div className="flex gap-8">
+        <div className="flex gap-6">
           {navItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               smooth={true}
               duration={500}
-              className="text-mauve-dark hover:text-black cursor-pointer transition-colors duration-300 text-2xl"
+              className="text-mauve-dark hover:text-black cursor-pointer transition-colors duration-300 text-xl font-playfair"
               spy={true}
               offset={-100}
             >

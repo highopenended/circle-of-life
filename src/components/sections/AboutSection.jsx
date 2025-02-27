@@ -1,10 +1,15 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import SectionTitle from '../common/SectionTitle'
 
 const AboutSection = () => {
   return (
-    <section id="about" className="min-h-screen bg-[repeating-linear-gradient(45deg,#E6D7E6,#E6D7E6 10px,#D6C7D6 10px,#D6C7D6 20px)]">
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl text-center text-mauve-dark mb-8">ABOUT US</h2>
+    <section id="about" className="min-h-screen bg-mauve-light py-16 flex items-center">
+      <div className="container mx-auto px-4">
+        <div className="text-center">
+          <SectionTitle>About Us</SectionTitle>
+          {/* Rest of about section content */}
+        </div>
       </div>
     </section>
   )

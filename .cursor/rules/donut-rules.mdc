@@ -1,9 +1,62 @@
 ---
-description:
-globs:
+description: General layout and goal of this landing page
+globs: 
 ---
 
 # Your rule content
 
 - You can @ files here
 - You can use markdown but dont have to
+
+- I am making a Donut Shop landing page called The Circle of Life
+
+It will use React and Vite and Tailwind
+
+- General layout of the page:
+  + Sticky menu at the top
+  + Hero Image section
+  + About Us Section
+  + Menu Section
+  + Contact Us Footer
+
+Sticky Menu at Top
+- Screenshot 3
+- I Want a sticky header at the top with the name of the Shop on the left, then 4 buttons on the right, About, Menu, Contact, Cart
+  + Button functionality
+    - About will scroll you down to About section
+    - Menu will scroll you down to the Menu section
+    - Contact will scroll you down to the bottom where there will be social media icons, a phone number, and an email address
+    - Cart will just be a placeholder for now
+  + I want the buttons to have a faint scroll over effect to give some feedback
+  + Slightly transparent
+
+Hero Image Section
+- Screenshot 4
+- I want a big hero image with the logo in the middle (placeholder for now)
+- Just add the spots where the content will go and I'll add it in later, give it some light diagonal stripes to show the section clearly until I can get an image for it
+
+About Us Section
+- Screenshot 5
+- The About Us section will have a few different images, just make it a big placeholder for now (diagonal stripes again to distinguish its boundaries)
+
+Menu Section
+- Screenshot 6
+- There is a header at the top that will have the shop logo and the "Menu" text
+  + The "Menu" text will be centered, and will have another centered textbox below it that is also centered. These two should be in a wrapper so they stay together.
+- The Menu section will have pictures of douts on white backdrops
+- I want the spacing of the donuts to all be done with flex, forming a kind of donut grid from the donut cards
+
+Donut Cards
+- Each donut card will have the following:
+  + Picture of a donut
+  + Rough white circular backdrop under the donut image
+  + Below the image/white circle is three lines of text
+    - Japanese name of the donut
+    - English name of the donut
+    - Price of the donut in yen
+- I want it to be very easy to go into the code and add new donuts
+
+Notes
+- I added in 4 donut pictures as examples to get you started
+- Keep the code very DRY, scalable, readable
+- Have ample but concise documentation so we can edit later

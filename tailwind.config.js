@@ -19,6 +19,7 @@ export default {
       },
       fontFamily: {
         'playfair': ['"Playfair Display"', 'serif'],
+        'cursive': ['"Great Vibes"', 'cursive'],
       },
     },
   },

@@ -2,20 +2,23 @@
 import React from 'react'
 import DonutCard from '../menu/DonutCard'
 import { donuts } from '../../data/donuts'
+import SectionTitle from '../common/SectionTitle'
 
 const MenuSection = () => {
   return (
-    <section id="menu" className="min-h-screen bg-mauve-light py-16">
+    <section id="menu" className="min-h-screen bg-mauve-light py-16 flex items-center">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
-            LOGO
+        <div className="text-center">
+          <SectionTitle>Menu</SectionTitle>
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
+              LOGO
+            </div>
+            <p className="text-xl text-mauve-dark max-w-2xl mx-auto">
+              Discover our handcrafted selection of artisanal donuts, made fresh daily with love
+            </p>
           </div>
-          <h2 className="text-4xl text-mauve-dark mb-4">Menu</h2>
-          <p className="text-xl text-mauve-dark max-w-2xl mx-auto">
-            Discover our handcrafted selection of artisanal donuts, made fresh daily with love
-          </p>
         </div>
 
         {/* Donut Grid */}

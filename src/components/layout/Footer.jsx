@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import facebookLogo from '../../assets/facebook_logo.png';
 import instagramLogo from '../../assets/instagram_logo.png';
@@ -10,7 +11,6 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Contact Information */}
           <div className="mb-8 md:mb-0 text-center md:text-left">
-            <h3 className="text-5xl font-semibold mb-6">Contact Us</h3>
             <p className="text-3xl mb-4">
               <a href="mailto:example@gmail.com" className="hover:text-primary-200 transition-colors">
                 example@gmail.com
