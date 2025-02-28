@@ -16,6 +16,13 @@ node_modules
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production
+
+# Firebase
+.firebase/
+.firebaserc
+firebase-debug.log*
+ui-debug.log*
 
 # Logs
 logs
@@ -38,4 +45,4 @@ lerna-debug.log*
 *.sw?
 
 # Vite
-*.local 
+*.local
