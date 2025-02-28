@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -139,6 +140,10 @@ const Header = () => {
       </Link>
     </>
   );
+
+  NavItems.propTypes = {
+    isMobile: PropTypes.bool.isRequired
+  };
 
   return (
     <header className="fixed w-full z-50 bg-white/80 backdrop-blur-sm">
